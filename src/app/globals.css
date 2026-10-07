@@ -89,3 +89,20 @@
     cursor: pointer;
   }
 }
+
+@keyframes message-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes trace-enter {
+  from { opacity: 0; transform: translateX(-6px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.message-enter { animation: message-enter 240ms ease-out both; }
+.trace-enter { animation: trace-enter 300ms 80ms ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .message-enter, .trace-enter { animation: none; }
+}
